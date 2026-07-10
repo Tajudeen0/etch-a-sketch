@@ -1,7 +1,8 @@
+//create the js objects
 const container = document.querySelector(".container");
 const fragments = document.createDocumentFragment();
 
-
+//initial sketch grid
 for (let i = 0; i < 256; i++) {
     const grids = document.createElement("div");
     grids.classList.add("grids");
@@ -12,7 +13,6 @@ for (let i = 0; i < 256; i++) {
     grids.style.border = "1px solid white";
     fragments.appendChild(grids);
     
-container.appendChild(fragments);
 
 
 
@@ -22,3 +22,4 @@ grids.addEventListener('mouseover', e => {
 }
 
 
+container.appendChild(fragments);
