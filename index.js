@@ -12,7 +12,7 @@ for (let i = 0; i < 256; i++) {
     grids.style.height = "6.25%";
     grids.style.backgroundColor = "beige";
     grids.style.boxSizing = "border-box";
-    grids.style.border = "1px solid white";
+    //grids.style.border = "1px solid white";
     fragments.appendChild(grids);
     
 
@@ -24,15 +24,17 @@ for (let i = 0; i < 256; i++) {
 
 //create a new user specific grid.
 function newGrid(calculatedSize, calculatedNumber) {
-    for (let i = 0; i < 256; i++) {
+    container.replaceChildren()
+    for (let i = 0; i < calculatedNumber; i++) {
     const grids = document.createElement("div");
     grids.classList.add("grids");
-    grids.style.width = "6.25%";
-    grids.style.height = "6.25%";
+    grids.style.width = `${calculatedSize}%`;
+    grids.style.height = `${calculatedSize}%`;
     grids.style.backgroundColor = "beige";
     grids.style.boxSizing = "border-box";
-    grids.style.border = "1px solid white";
+    //grids.style.border = "1px solid white";
     fragments.appendChild(grids);
+    container.appendChild(fragments);
     
 
     grids.addEventListener('mouseover', e => {
@@ -41,5 +43,15 @@ function newGrid(calculatedSize, calculatedNumber) {
 }
 }
 
+createAnother.addEventListener('click', e => {
+    let userInput = prompt("Please select a number of grids per side!\nMax Allowed is 100");
+    if (userInput > 100) {
+        userInput = 100
+    }
+    let calculatedNumber = userInput * userInput;
+    let calculatedSize = 100/userInput;
+    newGrid(calculatedSize,calculatedNumber);
+}
+)
 //appends
 container.appendChild(fragments);
