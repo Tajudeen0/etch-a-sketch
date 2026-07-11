@@ -8,9 +8,5 @@ body {
     height: 75vmin;
     margin: 5% auto;
     /* background-color: aqua; */
-    border: 5px solid black;
-}
-
-.createThem {
-   
+    border: 5px solid rgb(210, 123, 51);
 }
